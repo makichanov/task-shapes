@@ -9,6 +9,9 @@ public class TetrahedronValidator {
 
     public static boolean isValid(String tetrahedronLine) {
         String[] numbersArray = tetrahedronLine.split(ELEMENT_DELIMITER);
+        if (numbersArray.length != 12) {
+            return false;
+        }
         for (String number : numbersArray) {
             if (!number.matches(NUMBER_REGEX)) {
                 return false;
